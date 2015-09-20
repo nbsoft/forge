@@ -2,3 +2,7 @@
 	path = forge-parent
 	url = https://github.com/nbsoft/forge.git
 	branch = forge-parent
+[submodule "forge-sql"]
+	path = forge-sql
+	url = https://github.com/nbsoft/forge.git
+	branch = forge-sql
