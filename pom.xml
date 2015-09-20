@@ -32,6 +32,7 @@
     <modules>
         <module>forge-parent</module>
         <module>forge-sql</module>
+        <module>forge</module>
     </modules>
 
     <build>
