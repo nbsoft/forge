@@ -60,8 +60,8 @@
                         </goals>
                         <configuration>
                             <files>
-                                <file>../forge-sql/target/forge-sql.properties</file>
                                 <file>../forge-parent/target/forge-parent.properties</file>
+                                <file>../forge-sql/target/forge-sql.properties</file>
                             </files>
                         </configuration>
                     </execution>
