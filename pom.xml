@@ -29,6 +29,10 @@
     <description>This aggregator collects all the Forge modules.</description>
     <inceptionYear>2015</inceptionYear>
 
+    <modules>
+        <module>forge-parent</module>
+    </modules>
+
     <build>
         <pluginManagement>
             <plugins>
