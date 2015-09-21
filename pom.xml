@@ -43,7 +43,9 @@
     </scm>
 
     <properties>
-        <projectVersions>null</projectVersions>
+        <projectVersions>1.0</projectVersions>
+        <forgeParentVersion>1</forgeParentVersion>
+        <forgeSQLVersion>1.0</forgeSQLVersion>
     </properties>
 
     <build>
@@ -60,8 +62,9 @@
                         </goals>
                         <configuration>
                             <files>
-                                <file>../forge-parent/target/forge-parent.properties</file>
-                                <file>../forge-sql/target/forge-sql.properties</file>
+                                <file>../forge-parent/target/site.properties</file>
+                                <file>../forge-sql/target/site.properties</file>
+                                <file>../forge/target/site.properties</file>
                             </files>
                         </configuration>
                     </execution>

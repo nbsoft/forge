@@ -14,18 +14,18 @@
  * limitations under the License.
  *#
 
-About ${project.name}
+About ${forgeName}
 ---------------------
-${project.description}
+${forgeDescription}
 
 Forge Modules
 -----------------------
 Forge has currently the following modules:
 
-| Name                  | Latest version                | Description               |                                                                         |
-|-----------------------|-------------------------------|---------------------------|
-| [${forgeParentName}]  | ${forgeParentLatestVersion}   | ${forgeParentDescription} |
-| [${forgeSQLName}]     | ${forgeSQLLatestVersion}      | ${forgeSQLDescription}    |
+| Name                  | Latest version            | Description               |                                                                         |
+|-----------------------|---------------------------|---------------------------|
+| [${forgeParentName}]  | ${forgeParentVersion}     | ${forgeParentDescription} |
+| [${forgeSQLName}]     | ${forgeSQLVersion}        | ${forgeSQLDescription}    |
 
-[${forgeParentName}]: ../../${forgeParentArtifactId}/${forgeParentLatestVersion}
-[${forgeSQLName}]: ../../${forgeSQLArtifactId}/${forgeSQLLatestVersion}
+[${forgeParentName}]: ../../${forgeParentArtifactId}/${forgeParentVersion}
+[${forgeSQLName}]: ../../${forgeSQLArtifactId}/${forgeSQLVersion}
