@@ -45,18 +45,18 @@
 
     <properties>
         <scm.repository.name>forge</scm.repository.name>
-        <projectVersions>null</projectVersions>
+        <projectVersions>1</projectVersions>
     </properties>
 
     <build>
         <resources>
             <resource>
-                <directory>${project.basedir}/src/site/resources</directory>
+                <directory>src/main/resources</directory>
                 <targetPath>${project.build.directory}</targetPath>
                 <filtering>true</filtering>
             </resource>
             <resource>
-                <directory>${project.basedir}/src/site/resources</directory>
+                <directory>src/main/resources</directory>
                 <targetPath>${project.build.directory}</targetPath>
                 <filtering>false</filtering>
             </resource>

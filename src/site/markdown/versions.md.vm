@@ -17,18 +17,19 @@
 Versions
 --------
 
-| Latest version                            |
-|-------------------------------------------|
-| [${project.version}](../${project.version}) |
+#set ($versions = (${projectVersions}))
 
-#if(${projectVersions} != "null")
-
-#set($versions = ${projectVersions})
+#foreach ($version in $versions.split(" "))
+#if ($velocityCount == 1)
+| Latest version            |
+|---------------------------|
+| [$version](../$version)   |
+#elseif ($velocityCount > 1)
+#if ($velocityCount == 2)
 
 | Previous versions         |
 |---------------------------|
-#foreach($version in $versions.split(", "))
+#end
 | [$version](../$version)   |
 #end
-
 #end
