@@ -43,7 +43,7 @@
     </scm>
 
     <properties>
-        <projectVersions>null</projectVersions>
+        <projectVersions>1.0</projectVersions>
     </properties>
 
 </project>
