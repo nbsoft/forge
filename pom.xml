@@ -44,8 +44,6 @@
 
     <properties>
         <projectVersions>1.0</projectVersions>
-        <forgeParentVersion>1</forgeParentVersion>
-        <forgeSQLVersion>1.0</forgeSQLVersion>
     </properties>
 
     <build>
