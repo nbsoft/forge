@@ -53,7 +53,7 @@
                 <artifactId>properties-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>read-project-properties</id>
+                        <id>read-site-properties</id>
                         <phase>pre-site</phase>
                         <goals>
                             <goal>read-project-properties</goal>
