@@ -55,11 +55,6 @@
                 <targetPath>${project.build.directory}</targetPath>
                 <filtering>true</filtering>
             </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <targetPath>${project.build.directory}</targetPath>
-                <filtering>false</filtering>
-            </resource>
         </resources>
         <plugins>
             <plugin>
