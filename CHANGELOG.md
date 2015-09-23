@@ -6,7 +6,8 @@ All notable changes to this project will be documented in this file.
 
 **Added:**
 
-- ...
+- Forge Parent 1
+- Forge SQL 1.0
 
 [Full changelog](https://github.com/nbsoft/forge/compare/eea1a3e8d56b8aaef3c83de90731c0ed99a001d6...forge-1.0)
 
