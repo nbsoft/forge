@@ -16,10 +16,10 @@
 
 package org.nbsoft.forge.sql.syntax.conjunctions;
 
-import org.nbsoft.forge.sql.syntax.Operators;
+import org.nbsoft.forge.sql.syntax.Operator;
 
 public interface And {
 
-    Operators and(String and);
+    Operator and(String and);
 
 }

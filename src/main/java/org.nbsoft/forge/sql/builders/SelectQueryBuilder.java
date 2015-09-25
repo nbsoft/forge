@@ -46,7 +46,7 @@ public class SelectQueryBuilder implements SelectQuery {
     }
 
     @Override
-    public Operators where(String where) {
+    public Operator where(String where) {
         this.conjunction.add("WHERE");
         this.where.add(where);
 
@@ -126,7 +126,7 @@ public class SelectQueryBuilder implements SelectQuery {
     }
 
     @Override
-    public Operators and(String and) {
+    public Operator and(String and) {
         this.conjunction.add("AND");
         this.where.add(and);
 
@@ -134,7 +134,7 @@ public class SelectQueryBuilder implements SelectQuery {
     }
 
     @Override
-    public Operators or(String or) {
+    public Operator or(String or) {
         this.conjunction.add("OR");
         this.where.add(or);
 

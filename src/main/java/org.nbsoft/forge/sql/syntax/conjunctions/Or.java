@@ -16,10 +16,10 @@
 
 package org.nbsoft.forge.sql.syntax.conjunctions;
 
-import org.nbsoft.forge.sql.syntax.Operators;
+import org.nbsoft.forge.sql.syntax.Operator;
 
 public interface Or {
 
-    Operators or(String or);
+    Operator or(String or);
 
 }
