@@ -34,6 +34,7 @@ public class SelectQueryBuilder implements SelectQuery {
     private List<Object> whatList = new ArrayList<>();
 
     private String orderBy;
+    private String order;
 
     /* Command */
 
@@ -151,14 +152,29 @@ public class SelectQueryBuilder implements SelectQuery {
         return this;
     }
 
-    /* Utils */
+    /* Orders */
 
     @Override
-    public Build orderBy(String orderBy) {
+    public Order orderBy(String orderBy) {
         this.orderBy = orderBy;
 
         return this;
     }
+
+    @Override
+    public Build asc() {
+        this.order = "ASC";
+
+        return this;
+    }
+
+    @Override
+    public Build desc() {
+        this.order = "DESC";
+
+        return this;
+    }
+
 
     /* Build */
 
@@ -174,7 +190,7 @@ public class SelectQueryBuilder implements SelectQuery {
         }
 
         if (orderBy != null) {
-            query += "\nORDER BY " + orderBy;
+            query += "\nORDER BY " + orderBy + " " + order;
         }
 
         query += ";";

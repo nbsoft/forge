@@ -1,7 +1,7 @@
 package org.nbsoft.forge.sql.syntax;
 
-public interface OrderBy {
+public interface OrderBy extends Order {
 
-    Build orderBy(String orderBy);
+    Order orderBy(String orderBy);
 
 }
