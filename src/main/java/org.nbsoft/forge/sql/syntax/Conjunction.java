@@ -18,8 +18,7 @@ package org.nbsoft.forge.sql.syntax;
 
 import org.nbsoft.forge.sql.syntax.conjunctions.And;
 import org.nbsoft.forge.sql.syntax.conjunctions.Or;
-import org.nbsoft.forge.sql.syntax.conjunctions.Where;
 
-public interface Conjunction extends Where, And, Or, OrderBy, Build {
+public interface Conjunction extends And, Or, OrderBy, Build {
 
 }

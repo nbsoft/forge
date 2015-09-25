@@ -14,11 +14,7 @@
  * limitations under the License.
  */
 
-package org.nbsoft.forge.sql.syntax.conjunctions;
-
-import org.nbsoft.forge.sql.syntax.Build;
-import org.nbsoft.forge.sql.syntax.Operator;
-import org.nbsoft.forge.sql.syntax.OrderBy;
+package org.nbsoft.forge.sql.syntax;
 
 public interface Where extends OrderBy, Build {
 

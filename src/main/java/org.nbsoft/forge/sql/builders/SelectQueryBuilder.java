@@ -18,7 +18,6 @@ package org.nbsoft.forge.sql.builders;
 
 import org.nbsoft.forge.sql.Query;
 import org.nbsoft.forge.sql.syntax.*;
-import org.nbsoft.forge.sql.syntax.conjunctions.Where;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -174,7 +173,6 @@ public class SelectQueryBuilder implements SelectQuery {
 
         return this;
     }
-
 
     /* Build */
 
