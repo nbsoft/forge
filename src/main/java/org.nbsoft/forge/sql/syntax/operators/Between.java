@@ -16,10 +16,10 @@
 
 package org.nbsoft.forge.sql.syntax.operators;
 
-import org.nbsoft.forge.sql.syntax.Conjunctions;
+import org.nbsoft.forge.sql.syntax.Conjunction;
 
 public interface Between {
 
-    Conjunctions between(Object between);
+    Conjunction between(Object between);
 
 }

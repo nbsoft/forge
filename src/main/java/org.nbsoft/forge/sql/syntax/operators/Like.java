@@ -16,10 +16,10 @@
 
 package org.nbsoft.forge.sql.syntax.operators;
 
-import org.nbsoft.forge.sql.syntax.Conjunctions;
+import org.nbsoft.forge.sql.syntax.Conjunction;
 
 public interface Like {
 
-    Conjunctions like(Object like);
+    Conjunction like(Object like);
 
 }

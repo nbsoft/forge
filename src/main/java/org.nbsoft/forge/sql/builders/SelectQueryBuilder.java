@@ -54,7 +54,7 @@ public class SelectQueryBuilder implements SelectQuery {
     }
 
     @Override
-    public Conjunctions equal(Object equal) {
+    public Conjunction equal(Object equal) {
         operator.add("=");
         what.add(equal);
 
@@ -62,7 +62,7 @@ public class SelectQueryBuilder implements SelectQuery {
     }
 
     @Override
-    public Conjunctions notEqual(Object notEqual) {
+    public Conjunction notEqual(Object notEqual) {
         operator.add("<>");
         what.add(notEqual);
 
@@ -70,7 +70,7 @@ public class SelectQueryBuilder implements SelectQuery {
     }
 
     @Override
-    public Conjunctions greaterThan(Object greaterThan) {
+    public Conjunction greaterThan(Object greaterThan) {
         operator.add(">");
         what.add(greaterThan);
 
@@ -78,7 +78,7 @@ public class SelectQueryBuilder implements SelectQuery {
     }
 
     @Override
-    public Conjunctions lessThan(Object lessThan) {
+    public Conjunction lessThan(Object lessThan) {
         operator.add("<");
         what.add(lessThan);
 
@@ -86,7 +86,7 @@ public class SelectQueryBuilder implements SelectQuery {
     }
 
     @Override
-    public Conjunctions greaterThanOrEqual(Object greaterThanOrEqual) {
+    public Conjunction greaterThanOrEqual(Object greaterThanOrEqual) {
         operator.add(">=");
         what.add(greaterThanOrEqual);
 
@@ -94,7 +94,7 @@ public class SelectQueryBuilder implements SelectQuery {
     }
 
     @Override
-    public Conjunctions lessThanOrEqual(Object greaterThanOrEqual) {
+    public Conjunction lessThanOrEqual(Object greaterThanOrEqual) {
         operator.add("<=");
         what.add(greaterThanOrEqual);
 
@@ -102,7 +102,7 @@ public class SelectQueryBuilder implements SelectQuery {
     }
 
     @Override
-    public Conjunctions between(Object between) {
+    public Conjunction between(Object between) {
         operator.add("BETWEEN");
         what.add(between);
 
@@ -110,7 +110,7 @@ public class SelectQueryBuilder implements SelectQuery {
     }
 
     @Override
-    public Conjunctions like(Object like) {
+    public Conjunction like(Object like) {
         operator.add("LIKE");
         what.add(like);
 
@@ -118,7 +118,7 @@ public class SelectQueryBuilder implements SelectQuery {
     }
 
     @Override
-    public Conjunctions in(Object in) {
+    public Conjunction in(Object in) {
         operator.add("IN");
         what.add(in);
 
