@@ -18,6 +18,7 @@ package org.nbsoft.forge.sql.builders;
 
 import org.nbsoft.forge.sql.Query;
 import org.nbsoft.forge.sql.syntax.*;
+import org.nbsoft.forge.sql.syntax.conjunctions.Where;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,10 @@ public class SelectQueryBuilder implements SelectQuery {
     private List<String> whereList = new ArrayList<>();
     private List<String> operatorList = new ArrayList<>();
     private List<Object> whatList = new ArrayList<>();
+
+    private String orderBy;
+
+    /* Command */
 
     @Override
     public From select(String select) {
@@ -46,6 +51,8 @@ public class SelectQueryBuilder implements SelectQuery {
         return this;
     }
 
+    /* Conjunctions */
+
     @Override
     public Operator where(String where) {
         conjunctionList.add("WHERE");
@@ -53,6 +60,24 @@ public class SelectQueryBuilder implements SelectQuery {
 
         return this;
     }
+
+    @Override
+    public Operator and(String and) {
+        conjunctionList.add("AND");
+        whereList.add(and);
+
+        return this;
+    }
+
+    @Override
+    public Operator or(String or) {
+        conjunctionList.add("OR");
+        whereList.add(or);
+
+        return this;
+    }
+
+    /* Operators */
 
     @Override
     public Conjunction equal(Object equal) {
@@ -126,21 +151,16 @@ public class SelectQueryBuilder implements SelectQuery {
         return this;
     }
 
+    /* Utils */
+
     @Override
-    public Operator and(String and) {
-        operatorList.add("AND");
-        whereList.add(and);
+    public Build orderBy(String orderBy) {
+        this.orderBy = orderBy;
 
         return this;
     }
 
-    @Override
-    public Operator or(String or) {
-        operatorList.add("OR");
-        whereList.add(or);
-
-        return this;
-    }
+    /* Build */
 
     @Override
     public Query build() {
@@ -151,6 +171,10 @@ public class SelectQueryBuilder implements SelectQuery {
             for (int i = 0; i < conjunctionList.size(); i++) {
                 query += "\n" + conjunctionList.get(i) + " " + whereList.get(i) + " " + operatorList.get(i) + " " + whatList.get(i);
             }
+        }
+
+        if (orderBy != null) {
+            query += "\nORDER BY " + orderBy;
         }
 
         query += ";";

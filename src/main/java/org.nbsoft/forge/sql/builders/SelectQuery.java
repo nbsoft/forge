@@ -18,6 +18,6 @@ package org.nbsoft.forge.sql.builders;
 
 import org.nbsoft.forge.sql.syntax.*;
 
-public interface SelectQuery extends Select, From, Where, Operator, Conjunction {
+public interface SelectQuery extends Select, From, Conjunction, Operator {
 
 }

@@ -14,9 +14,13 @@
  * limitations under the License.
  */
 
-package org.nbsoft.forge.sql.syntax;
+package org.nbsoft.forge.sql.syntax.conjunctions;
 
-public interface Where extends Build {
+import org.nbsoft.forge.sql.syntax.Build;
+import org.nbsoft.forge.sql.syntax.Operator;
+import org.nbsoft.forge.sql.syntax.OrderBy;
+
+public interface Where extends OrderBy, Build {
 
     Operator where(String where);
 
