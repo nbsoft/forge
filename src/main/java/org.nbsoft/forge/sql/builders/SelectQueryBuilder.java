@@ -183,7 +183,13 @@ public class SelectQueryBuilder implements SelectQuery {
 
         if (!conjunctionList.isEmpty()) {
             for (int i = 0; i < conjunctionList.size(); i++) {
-                query += "\n" + conjunctionList.get(i) + " " + whereList.get(i) + " " + operatorList.get(i) + " " + whatList.get(i);
+                if (!conjunctionList.get(i).equals("AND")) {
+                    query += "\n";
+                } else {
+                    query += " ";
+                }
+
+                query += conjunctionList.get(i) + " " + whereList.get(i) + " " + operatorList.get(i) + " " + whatList.get(i);
             }
         }
 
