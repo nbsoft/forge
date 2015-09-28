@@ -21,11 +21,12 @@ import org.nbsoft.forge.sql.builders.helpers.Bracket;
 import org.nbsoft.forge.sql.builders.helpers.Condition;
 import org.nbsoft.forge.sql.syntax.*;
 import org.nbsoft.forge.sql.syntax.conjunctions.Where;
+import org.nbsoft.forge.sql.syntax.statements.SelectStatement;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SelectQueryBuilder implements SelectQuery, Builder<Query> {
+public class SelectQueryBuilder implements SelectStatement, Builder<Query> {
 
     private String select;
     private String from;

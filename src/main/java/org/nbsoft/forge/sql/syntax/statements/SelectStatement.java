@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-package org.nbsoft.forge.sql.builders;
+package org.nbsoft.forge.sql.syntax.statements;
 
 import org.nbsoft.forge.sql.syntax.*;
-import org.nbsoft.forge.sql.syntax.conjunctions.Where;
 
-public interface SelectQuery extends Select, From, Condition, Order {
+public interface SelectStatement extends Select, From, Condition, Order {
 
 }
