@@ -25,7 +25,7 @@ import org.nbsoft.forge.sql.syntax.conjunctions.Where;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SelectQueryBuilder implements SelectQuery {
+public class SelectQueryBuilder implements SelectQuery, Builder<Query> {
 
     private String select;
     private String from;

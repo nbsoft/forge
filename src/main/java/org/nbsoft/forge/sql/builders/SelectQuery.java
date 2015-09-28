@@ -19,6 +19,6 @@ package org.nbsoft.forge.sql.builders;
 import org.nbsoft.forge.sql.syntax.*;
 import org.nbsoft.forge.sql.syntax.conjunctions.Where;
 
-public interface SelectQuery extends Select, From, Where, Conjunction, Operator, Order {
+public interface SelectQuery extends Select, From, Condition, Order {
 
 }
