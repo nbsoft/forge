@@ -16,10 +16,13 @@
 
 package org.nbsoft.forge.sql.syntax.conjunctions;
 
+import org.nbsoft.forge.sql.builders.helpers.Bracket;
 import org.nbsoft.forge.sql.syntax.Operator;
 
 public interface And {
 
     Operator and(String and);
+
+    Operator and(Bracket bracket, String and);
 
 }

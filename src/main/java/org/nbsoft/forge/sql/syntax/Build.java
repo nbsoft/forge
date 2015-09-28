@@ -17,9 +17,8 @@
 package org.nbsoft.forge.sql.syntax;
 
 import org.nbsoft.forge.sql.Query;
+import org.nbsoft.forge.sql.builders.Builder;
 
-public interface Build {
-
-    Query build();
+public interface Build extends Builder<Query> {
 
 }

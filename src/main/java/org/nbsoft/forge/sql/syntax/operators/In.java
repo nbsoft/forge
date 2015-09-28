@@ -16,10 +16,13 @@
 
 package org.nbsoft.forge.sql.syntax.operators;
 
+import org.nbsoft.forge.sql.builders.helpers.Bracket;
 import org.nbsoft.forge.sql.syntax.Conjunction;
 
 public interface In {
 
     Conjunction in(Object in);
+
+    Conjunction in(Object in, Bracket bracket);
 
 }

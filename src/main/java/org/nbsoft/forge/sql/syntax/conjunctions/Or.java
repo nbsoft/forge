@@ -16,10 +16,13 @@
 
 package org.nbsoft.forge.sql.syntax.conjunctions;
 
+import org.nbsoft.forge.sql.builders.helpers.Bracket;
 import org.nbsoft.forge.sql.syntax.Operator;
 
 public interface Or {
 
     Operator or(String or);
+
+    Operator or(Bracket bracket, String or);
 
 }

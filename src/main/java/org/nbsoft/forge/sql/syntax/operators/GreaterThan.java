@@ -16,10 +16,13 @@
 
 package org.nbsoft.forge.sql.syntax.operators;
 
+import org.nbsoft.forge.sql.builders.helpers.Bracket;
 import org.nbsoft.forge.sql.syntax.Conjunction;
 
 public interface GreaterThan {
 
     Conjunction greaterThan(Object greaterThan);
+
+    Conjunction greaterThan(Object greaterThan, Bracket bracket);
 
 }

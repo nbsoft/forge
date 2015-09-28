@@ -16,10 +16,13 @@
 
 package org.nbsoft.forge.sql.syntax.operators;
 
+import org.nbsoft.forge.sql.builders.helpers.Bracket;
 import org.nbsoft.forge.sql.syntax.Conjunction;
 
 public interface Equal {
 
     Conjunction equal(Object equals);
+
+    Conjunction equal(Object equals, Bracket bracket);
 
 }

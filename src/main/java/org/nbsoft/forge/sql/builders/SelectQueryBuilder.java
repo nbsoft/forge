@@ -17,7 +17,10 @@
 package org.nbsoft.forge.sql.builders;
 
 import org.nbsoft.forge.sql.Query;
+import org.nbsoft.forge.sql.builders.helpers.Bracket;
+import org.nbsoft.forge.sql.builders.helpers.Condition;
 import org.nbsoft.forge.sql.syntax.*;
+import org.nbsoft.forge.sql.syntax.conjunctions.Where;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,10 +30,8 @@ public class SelectQueryBuilder implements SelectQuery {
     private String select;
     private String from;
 
-    private List<String> conjunctionList = new ArrayList<>();
-    private List<String> whereList = new ArrayList<>();
-    private List<String> operatorList = new ArrayList<>();
-    private List<Object> whatList = new ArrayList<>();
+    private Condition condition = new Condition();
+    private List<Condition> conditionList = new ArrayList<>();
 
     private String orderBy;
     private String order;
@@ -55,24 +56,36 @@ public class SelectQueryBuilder implements SelectQuery {
 
     @Override
     public Operator where(String where) {
-        conjunctionList.add("WHERE");
-        whereList.add(where);
+        return where(condition.getBracket(), where);
+    }
+
+    @Override
+    public Operator where(Bracket bracket, String where) {
+        initConjunction("WHERE", where, bracket);
 
         return this;
     }
 
     @Override
     public Operator and(String and) {
-        conjunctionList.add("AND");
-        whereList.add(and);
+        return and(condition.getBracket(), and);
+    }
+
+    @Override
+    public Operator and(Bracket bracket, String and) {
+        initConjunction("AND", and, bracket);
 
         return this;
     }
 
     @Override
     public Operator or(String or) {
-        conjunctionList.add("OR");
-        whereList.add(or);
+        return or(condition.getBracket(), or);
+    }
+
+    @Override
+    public Operator or(Bracket bracket, String or) {
+        initConjunction("OR", or, bracket);
 
         return this;
     }
@@ -81,72 +94,108 @@ public class SelectQueryBuilder implements SelectQuery {
 
     @Override
     public Conjunction equal(Object equal) {
-        operatorList.add("=");
-        whatList.add(equal);
+        return equal(equal, condition.getBracket());
+    }
+
+    @Override
+    public Conjunction equal(Object equal, Bracket bracket) {
+        initOperator("=", equal, bracket);
 
         return this;
     }
 
     @Override
     public Conjunction notEqual(Object notEqual) {
-        operatorList.add("<>");
-        whatList.add(notEqual);
+        return notEqual(notEqual, condition.getBracket());
+    }
+
+    @Override
+    public Conjunction notEqual(Object notEqual, Bracket bracket) {
+        initOperator("<>", notEqual, bracket);
 
         return this;
     }
 
     @Override
     public Conjunction greaterThan(Object greaterThan) {
-        operatorList.add(">");
-        whatList.add(greaterThan);
+        return greaterThan(greaterThan, condition.getBracket());
+    }
+
+    @Override
+    public Conjunction greaterThan(Object greaterThan, Bracket bracket) {
+        initOperator(">", greaterThan, bracket);
 
         return this;
     }
 
     @Override
     public Conjunction lessThan(Object lessThan) {
-        operatorList.add("<");
-        whatList.add(lessThan);
+        return lessThan(lessThan, condition.getBracket());
+    }
+
+    @Override
+    public Conjunction lessThan(Object lessThan, Bracket bracket) {
+        initOperator("<", lessThan, bracket);
 
         return this;
     }
 
     @Override
     public Conjunction greaterThanOrEqual(Object greaterThanOrEqual) {
-        operatorList.add(">=");
-        whatList.add(greaterThanOrEqual);
+        return greaterThanOrEqual(greaterThanOrEqual, Bracket.NONE);
+    }
+
+    @Override
+    public Conjunction greaterThanOrEqual(Object greaterThanOrEqual, Bracket bracket) {
+        initOperator(">=", greaterThanOrEqual, bracket);
 
         return this;
     }
 
     @Override
-    public Conjunction lessThanOrEqual(Object greaterThanOrEqual) {
-        operatorList.add("<=");
-        whatList.add(greaterThanOrEqual);
+    public Conjunction lessThanOrEqual(Object lessThanOrEqual) {
+        return lessThanOrEqual(lessThanOrEqual, condition.getBracket());
+    }
+
+    @Override
+    public Conjunction lessThanOrEqual(Object lessThanOrEqual, Bracket bracket) {
+        initOperator("<=", lessThanOrEqual, bracket);
 
         return this;
     }
 
     @Override
     public Conjunction between(Object between) {
-        operatorList.add("BETWEEN");
-        whatList.add(between);
+        return between(between, condition.getBracket());
+    }
+
+    @Override
+    public Conjunction between(Object between, Bracket bracket) {
+        initOperator("BETWEEN", between, bracket);
 
         return this;
     }
 
     @Override
     public Conjunction like(Object like) {
-        operatorList.add("LIKE");
-        whatList.add(like);
+        return like(like, condition.getBracket());
+    }
+
+    @Override
+    public Conjunction like(Object like, Bracket bracket) {
+        initOperator("LIKE", like, bracket);
 
         return this;
     }
 
     @Override
     public Conjunction in(Object in) {
-        operatorList.add("IN");
-        whatList.add(in);
+        return in(in, condition.getBracket());
+    }
+
+    @Override
+    public Conjunction in(Object in, Bracket bracket) {
+        initOperator("IN", in, bracket);
 
         return this;
     }
@@ -181,15 +230,19 @@ public class SelectQueryBuilder implements SelectQuery {
         String query = "SELECT " + select + "\n";
         query += "FROM " + from;
 
-        if (!conjunctionList.isEmpty()) {
-            for (int i = 0; i < conjunctionList.size(); i++) {
-                if (!conjunctionList.get(i).equals("AND")) {
-                    query += "\n";
-                } else {
-                    query += " ";
+        if (!conditionList.isEmpty()) {
+            for (Condition condition : conditionList) {
+                query += " " + condition.getConjunction() + " ";
+
+                if (condition.getBracket().equals(Bracket.OPEN)) {
+                    query += condition.getBracket().getValue();
                 }
 
-                query += conjunctionList.get(i) + " " + whereList.get(i) + " " + operatorList.get(i) + " " + whatList.get(i);
+                query += condition.getWhere() + " " + condition.getOperator() + " " + condition.getWhat();
+
+                if (condition.getBracket().equals(Bracket.CLOSE)) {
+                    query += condition.getBracket().getValue();
+                }
             }
         }
 
@@ -200,6 +253,25 @@ public class SelectQueryBuilder implements SelectQuery {
         query += ";";
 
         return new Query(query);
+    }
+
+    private void initConjunction(String conjunction, String where, Bracket bracket) {
+        condition.setConjunction(conjunction);
+        condition.setWhere(where);
+        condition.setBracket(bracket);
+    }
+
+    private void initOperator(String operator, Object what, Bracket bracket) {
+        condition.setOperator(operator);
+        condition.setWhat(what);
+        condition.setBracket(bracket);
+
+        addCondition();
+    }
+
+    private void addCondition() {
+        conditionList.add(condition);
+        condition = new Condition();
     }
 
 }
