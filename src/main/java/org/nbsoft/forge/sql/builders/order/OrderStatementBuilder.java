@@ -17,8 +17,8 @@
 package org.nbsoft.forge.sql.builders.order;
 
 import org.nbsoft.forge.sql.builders.order.syntax.By;
-import org.nbsoft.forge.sql.builders.order.syntax.Sort;
 import org.nbsoft.forge.sql.builders.order.syntax.Put;
+import org.nbsoft.forge.sql.builders.order.syntax.Sort;
 
 public class OrderStatementBuilder implements By, Sort {
 

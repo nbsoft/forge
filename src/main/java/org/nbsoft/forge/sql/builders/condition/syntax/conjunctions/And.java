@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package org.nbsoft.forge.sql.builders.expression.syntax;
+package org.nbsoft.forge.sql.builders.condition.syntax.conjunctions;
 
-import org.nbsoft.forge.sql.builders.expression.ExpressionStatement;
+import org.nbsoft.forge.sql.builders.condition.syntax.Operator;
 
-public interface Put {
+public interface And {
 
-    ExpressionStatement put();
+    Operator and(String and);
 
 }

@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package org.nbsoft.forge.sql.builders.expression;
+package org.nbsoft.forge.sql.builders.condition;
 
-import org.nbsoft.forge.sql.builders.expression.syntax.Conjunction;
-import org.nbsoft.forge.sql.builders.expression.syntax.Expression;
-import org.nbsoft.forge.sql.builders.expression.syntax.Operator;
+import org.nbsoft.forge.sql.builders.condition.syntax.The;
+import org.nbsoft.forge.sql.builders.condition.syntax.Conjunction;
+import org.nbsoft.forge.sql.builders.condition.syntax.Operator;
 
-public class ExpressionStatementBuilder implements Expression, Operator, Conjunction {
+public class ConditionStatementBuilder implements The, Operator, Conjunction {
 
     @Override
-    public Operator expression(String expression) {
+    public Operator the(String the) {
         return this;
     }
 
@@ -83,8 +83,8 @@ public class ExpressionStatementBuilder implements Expression, Operator, Conjunc
     }
 
     @Override
-    public ExpressionStatement put() {
-        return new ExpressionStatement();
+    public ConditionStatement put() {
+        return new ConditionStatement();
     }
 
 }

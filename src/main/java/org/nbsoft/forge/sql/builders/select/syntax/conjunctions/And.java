@@ -16,11 +16,11 @@
 
 package org.nbsoft.forge.sql.builders.select.syntax.conjunctions;
 
-import org.nbsoft.forge.sql.builders.expression.ExpressionStatement;
+import org.nbsoft.forge.sql.builders.condition.ConditionStatement;
 import org.nbsoft.forge.sql.builders.select.syntax.Conjunction;
 
 public interface And {
 
-    Conjunction and(ExpressionStatement and);
+    Conjunction and(ConditionStatement and);
 
 }

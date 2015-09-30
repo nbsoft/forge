@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-package org.nbsoft.forge.sql.builders.expression.syntax.conjunctions;
+package org.nbsoft.forge.sql.builders.condition.syntax;
 
-import org.nbsoft.forge.sql.builders.expression.syntax.Operator;
+import org.nbsoft.forge.sql.builders.condition.syntax.conjunctions.And;
+import org.nbsoft.forge.sql.builders.condition.syntax.conjunctions.Or;
 
-public interface Or {
-
-    Operator or(String or);
+public interface Conjunction extends And, Or, Put {
 
 }

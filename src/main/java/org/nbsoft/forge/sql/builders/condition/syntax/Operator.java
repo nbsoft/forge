@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-package org.nbsoft.forge.sql.builders.expression.syntax.conjunctions;
+package org.nbsoft.forge.sql.builders.condition.syntax;
 
-import org.nbsoft.forge.sql.builders.expression.syntax.Operator;
+import org.nbsoft.forge.sql.builders.condition.syntax.operators.*;
 
-public interface And {
-
-    Operator and(String and);
+public interface Operator extends Equal, NotEqual, GreaterThan, LessThan, GreaterThanOrEqual, LessThanOrEqual, Between, Like, In {
 
 }

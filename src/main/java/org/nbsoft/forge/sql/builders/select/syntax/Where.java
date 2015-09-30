@@ -16,10 +16,10 @@
 
 package org.nbsoft.forge.sql.builders.select.syntax;
 
-import org.nbsoft.forge.sql.builders.expression.ExpressionStatement;
+import org.nbsoft.forge.sql.builders.condition.ConditionStatement;
 
 public interface Where extends Order, SQL {
 
-    Conjunction where(ExpressionStatement where);
+    Conjunction where(ConditionStatement where);
 
 }

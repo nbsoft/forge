@@ -16,7 +16,7 @@
 
 package org.nbsoft.forge.sql.builders.select;
 
-import org.nbsoft.forge.sql.builders.expression.ExpressionStatement;
+import org.nbsoft.forge.sql.builders.condition.ConditionStatement;
 import org.nbsoft.forge.sql.builders.order.OrderStatement;
 import org.nbsoft.forge.sql.builders.select.syntax.*;
 
@@ -33,17 +33,17 @@ public class SelectStatementBuilder implements Select, From, Where, Conjunction,
     }
 
     @Override
-    public Conjunction where(ExpressionStatement where) {
+    public Conjunction where(ConditionStatement where) {
         return this;
     }
 
     @Override
-    public Conjunction and(ExpressionStatement and) {
+    public Conjunction and(ConditionStatement and) {
         return this;
     }
 
     @Override
-    public Conjunction or(ExpressionStatement or) {
+    public Conjunction or(ConditionStatement or) {
         return this;
     }
 

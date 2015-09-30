@@ -14,12 +14,15 @@
  * limitations under the License.
  */
 
-package org.nbsoft.forge.sql.builders.expression.syntax.operators;
+package org.nbsoft.forge.sql.builders;
 
-import org.nbsoft.forge.sql.builders.expression.syntax.Conjunction;
+import org.nbsoft.forge.sql.builders.condition.ConditionStatementBuilder;
+import org.nbsoft.forge.sql.builders.condition.syntax.Operator;
 
-public interface LessThanOrEqual {
+public class Condition {
 
-    Conjunction lessThanOrEqual(Object lessThanOrEqual);
+    public static Operator the(String the) {
+        return new ConditionStatementBuilder().the(the);
+    }
 
 }

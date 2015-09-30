@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-package org.nbsoft.forge.sql.builders.expression.syntax.operators;
+package org.nbsoft.forge.sql.builders.condition;
 
-import org.nbsoft.forge.sql.builders.expression.syntax.Conjunction;
+import org.nbsoft.forge.sql.builders.Statement;
 
-public interface In {
-
-    Conjunction in(Object in);
+public class ConditionStatement implements Statement {
 
 }

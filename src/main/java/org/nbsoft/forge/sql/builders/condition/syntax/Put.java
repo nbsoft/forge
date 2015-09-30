@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-package org.nbsoft.forge.sql.builders.expression;
+package org.nbsoft.forge.sql.builders.condition.syntax;
 
-import org.nbsoft.forge.sql.builders.Statement;
+import org.nbsoft.forge.sql.builders.condition.ConditionStatement;
 
-public class ExpressionStatement implements Statement {
+public interface Put {
+
+    ConditionStatement put();
 
 }

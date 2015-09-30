@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package org.nbsoft.forge.sql.builders.expression.syntax.operators;
+package org.nbsoft.forge.sql.builders.condition.syntax.operators;
 
-import org.nbsoft.forge.sql.builders.expression.syntax.Conjunction;
+import org.nbsoft.forge.sql.builders.condition.syntax.Conjunction;
 
-public interface LessThan {
+public interface Between {
 
-    Conjunction lessThan(Object lessThan);
+    Conjunction between(Object between);
 
 }
