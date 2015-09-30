@@ -17,13 +17,13 @@
 package org.nbsoft.forge.sql.builders.order;
 
 import org.nbsoft.forge.sql.builders.order.syntax.By;
-import org.nbsoft.forge.sql.builders.order.syntax.Orders;
+import org.nbsoft.forge.sql.builders.order.syntax.Sort;
 import org.nbsoft.forge.sql.builders.order.syntax.Put;
 
-public class OrderStatementBuilder implements Orders, By {
+public class OrderStatementBuilder implements By, Sort {
 
     @Override
-    public Orders by(String by) {
+    public Sort by(String by) {
         return this;
     }
 

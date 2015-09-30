@@ -17,11 +17,11 @@
 package org.nbsoft.forge.sql.builders;
 
 import org.nbsoft.forge.sql.builders.order.OrderStatementBuilder;
-import org.nbsoft.forge.sql.builders.order.syntax.Orders;
+import org.nbsoft.forge.sql.builders.order.syntax.Sort;
 
 public class Order {
 
-    public static Orders by(String by) {
+    public static Sort by(String by) {
         return new OrderStatementBuilder().by(by);
     }
 

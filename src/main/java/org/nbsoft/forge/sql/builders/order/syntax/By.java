@@ -16,8 +16,8 @@
 
 package org.nbsoft.forge.sql.builders.order.syntax;
 
-public interface By extends Orders {
+public interface By extends Sort {
 
-    Orders by(String by);
+    Sort by(String by);
 
 }
