@@ -16,8 +16,8 @@
 
 package org.nbsoft.forge.sql.builders;
 
-import org.nbsoft.forge.sql.builders.select.SelectStatementBuilder;
-import org.nbsoft.forge.sql.builders.select.syntax.From;
+import org.nbsoft.forge.sql.builders.statements.select.SelectStatementBuilder;
+import org.nbsoft.forge.sql.builders.statements.select.syntax.From;
 
 public class SQL {
 

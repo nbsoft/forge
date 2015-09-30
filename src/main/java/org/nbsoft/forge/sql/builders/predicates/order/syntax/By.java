@@ -14,15 +14,10 @@
  * limitations under the License.
  */
 
-package org.nbsoft.forge.sql.builders;
+package org.nbsoft.forge.sql.builders.predicates.order.syntax;
 
-import org.nbsoft.forge.sql.builders.predicates.order.OrderPredicateBuilder;
-import org.nbsoft.forge.sql.builders.predicates.order.syntax.Sort;
+public interface By extends Put {
 
-public class Order {
-
-    public static Sort by(String by) {
-        return new OrderPredicateBuilder().by(by);
-    }
+    Sort by(String expression);
 
 }

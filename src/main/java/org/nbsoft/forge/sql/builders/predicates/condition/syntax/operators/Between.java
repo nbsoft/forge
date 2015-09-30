@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
-package org.nbsoft.forge.sql.builders;
+package org.nbsoft.forge.sql.builders.predicates.condition.syntax.operators;
 
-import org.nbsoft.forge.sql.builders.predicates.order.OrderPredicateBuilder;
-import org.nbsoft.forge.sql.builders.predicates.order.syntax.Sort;
+import org.nbsoft.forge.sql.builders.predicates.condition.syntax.Conjunction;
 
-public class Order {
+public interface Between {
 
-    public static Sort by(String by) {
-        return new OrderPredicateBuilder().by(by);
-    }
+    Conjunction between(Object expression);
 
 }

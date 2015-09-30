@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
-package org.nbsoft.forge.sql.builders;
+package org.nbsoft.forge.sql.builders.predicates.condition.syntax;
 
-import org.nbsoft.forge.sql.builders.predicates.order.OrderPredicateBuilder;
-import org.nbsoft.forge.sql.builders.predicates.order.syntax.Sort;
+import org.nbsoft.forge.sql.builders.predicates.condition.ConditionPredicate;
 
-public class Order {
+public interface Put {
 
-    public static Sort by(String by) {
-        return new OrderPredicateBuilder().by(by);
-    }
+    ConditionPredicate put();
 
 }

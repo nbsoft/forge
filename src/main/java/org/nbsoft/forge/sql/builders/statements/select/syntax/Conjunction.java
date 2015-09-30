@@ -14,15 +14,11 @@
  * limitations under the License.
  */
 
-package org.nbsoft.forge.sql.builders;
+package org.nbsoft.forge.sql.builders.statements.select.syntax;
 
-import org.nbsoft.forge.sql.builders.predicates.order.OrderPredicateBuilder;
-import org.nbsoft.forge.sql.builders.predicates.order.syntax.Sort;
+import org.nbsoft.forge.sql.builders.statements.select.syntax.conjunctions.And;
+import org.nbsoft.forge.sql.builders.statements.select.syntax.conjunctions.Or;
 
-public class Order {
-
-    public static Sort by(String by) {
-        return new OrderPredicateBuilder().by(by);
-    }
+public interface Conjunction extends And, Or, Order, SQL {
 
 }

@@ -16,13 +16,13 @@
 
 package org.nbsoft.forge.sql.builders;
 
-import org.nbsoft.forge.sql.builders.condition.ConditionStatementBuilder;
-import org.nbsoft.forge.sql.builders.condition.syntax.Operator;
+import org.nbsoft.forge.sql.builders.predicates.condition.ConditionPredicateBuilder;
+import org.nbsoft.forge.sql.builders.predicates.condition.syntax.Operator;
 
 public class Condition {
 
     public static Operator predicate(String predicate) {
-        return new ConditionStatementBuilder().predicate(predicate);
+        return new ConditionPredicateBuilder().predicate(predicate);
     }
 
 }
