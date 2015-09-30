@@ -16,10 +16,10 @@
 
 package org.nbsoft.forge.sql.builders.order.syntax.orders;
 
-import org.nbsoft.forge.sql.builders.order.syntax.Put;
+import org.nbsoft.forge.sql.builders.order.syntax.By;
 
 public interface DESC {
 
-    Put desc();
+    By desc();
 
 }

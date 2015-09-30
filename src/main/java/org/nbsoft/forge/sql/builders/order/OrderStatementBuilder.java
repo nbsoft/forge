@@ -28,12 +28,12 @@ public class OrderStatementBuilder implements By, Sort {
     }
 
     @Override
-    public Put asc() {
+    public By asc() {
         return this;
     }
 
     @Override
-    public Put desc() {
+    public By desc() {
         return this;
     }
 

@@ -19,6 +19,6 @@ package org.nbsoft.forge.sql.builders.order.syntax;
 import org.nbsoft.forge.sql.builders.order.syntax.orders.ASC;
 import org.nbsoft.forge.sql.builders.order.syntax.orders.DESC;
 
-public interface Sort extends ASC, DESC, Put {
+public interface Sort extends ASC, DESC {
 
 }

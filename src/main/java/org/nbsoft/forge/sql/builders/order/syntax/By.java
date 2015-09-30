@@ -16,7 +16,7 @@
 
 package org.nbsoft.forge.sql.builders.order.syntax;
 
-public interface By extends Sort {
+public interface By extends Put {
 
     Sort by(String by);
 
