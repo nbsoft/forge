@@ -16,14 +16,14 @@
 
 package org.nbsoft.forge.sql.builders.condition;
 
-import org.nbsoft.forge.sql.builders.condition.syntax.The;
+import org.nbsoft.forge.sql.builders.condition.syntax.Predicate;
 import org.nbsoft.forge.sql.builders.condition.syntax.Conjunction;
 import org.nbsoft.forge.sql.builders.condition.syntax.Operator;
 
-public class ConditionStatementBuilder implements The, Operator, Conjunction {
+public class ConditionStatementBuilder implements Predicate, Operator, Conjunction {
 
     @Override
-    public Operator the(String the) {
+    public Operator predicate(String predicate) {
         return this;
     }
 

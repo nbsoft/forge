@@ -16,8 +16,8 @@
 
 package org.nbsoft.forge.sql.builders.condition.syntax;
 
-public interface The {
+public interface Predicate {
 
-    Operator the(String the);
+    Operator predicate(String predicate);
 
 }

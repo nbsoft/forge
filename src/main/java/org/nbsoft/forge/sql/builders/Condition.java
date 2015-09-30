@@ -21,8 +21,8 @@ import org.nbsoft.forge.sql.builders.condition.syntax.Operator;
 
 public class Condition {
 
-    public static Operator the(String the) {
-        return new ConditionStatementBuilder().the(the);
+    public static Operator predicate(String predicate) {
+        return new ConditionStatementBuilder().predicate(predicate);
     }
 
 }
